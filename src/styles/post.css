@@ -19,7 +19,7 @@
 }
 
 .post a {
-  @apply text-neutral-100 underline;
+  @apply text-violet-500 underline;
 }
 
 .post ul {
