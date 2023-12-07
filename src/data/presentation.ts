@@ -30,6 +30,10 @@ const presentation: Presentation = {
       label: "Photos",
       link: "https://photos.lloret.io",
     },
+    {
+      label: "Calendar",
+      link: "https://cal.com/sebastianlloret",
+    },
   ],
 };
 
