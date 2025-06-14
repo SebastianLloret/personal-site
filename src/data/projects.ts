@@ -9,13 +9,13 @@ const projects: Project[] = [
   {
     title: "Simple URL Shortener",
     techs: ["JavaScript", "Express"],
-    link: "/",
-    isComingSoon: true,
+    link: "https://github.com/SebastianLloret/emoji-shortener",
+    isComingSoon: false,
   },
   {
-    title: "Little Venice",
-    techs: ["WordPress", "PHP", "TypeScript"],
-    link: "https://littlevenicerestaurant.com/",
+    title: "Red Barn HPC",
+    techs: ["Odoo", "Python", "Node.js"],
+    link: "https://redbarnhpc.com/",
     isComingSoon: false,
   },
 ];
