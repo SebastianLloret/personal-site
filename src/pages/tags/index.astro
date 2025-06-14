@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+
+// Build a tag -> count map
+const tagMap = new Map<string, number>();
+
+for (const post of posts) {
+  for (const tag of post.data.tags || []) {
+    const tagKey = tag.toLowerCase();
+    tagMap.set(tagKey, (tagMap.get(tagKey) || 0) + 1);
+  }
+}
+
+// Convert to sorted array
+const sortedTags = Array.from(tagMap.entries()).sort((a, b) => b[1] - a[1]);
+---
+
+<Layout title="All Tags">
+  <main class="prose mx-auto p-6">
+    <h1 class="text-2xl mb-4">All Tags</h1>
+
+    {sortedTags.length > 0 ? (
+      <ul class="flex flex-wrap gap-3">
+        {sortedTags.map(([tag, count]) => (
+          <li>
+            <a href={`/tags/${tag}`} class="bg-gray-100 text-gray-800 px-3 py-1 rounded hover:bg-gray-200">
+              {tag} ({count})
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>No tags found.</p>
+    )}
+  </main>
+</Layout>

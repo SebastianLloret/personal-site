@@ -3,6 +3,7 @@ title: "hello world"
 publishedAt: 2023-12-07
 description: "reflections on self-motivation"
 slug: "hello-world"
+tags: ["blog"]
 isPublish: true
 ---
 ![a boss in habitica, yarnghetti](../../images/01/yarnghetti.png)

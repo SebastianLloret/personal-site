@@ -1,5 +1,6 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import formatDate from "@/utils/formatDate";
 
@@ -27,6 +28,18 @@ const { Content } = await post.render();
         {post.data.title} - {formatDate(post.data.publishedAt)}
       </h1>
       <p class="italic">{post.data.description}</p>
+
+      {post.data.tags && (
+        <ul class="flex flex-wrap gap-2 text-sm mt-4">
+          {post.data.tags.map(tag => (
+            <li>
+              <a href={`/tags/${tag.toLowerCase()}`} class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300">
+                {tag}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </header>
 
     <Content />

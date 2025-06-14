@@ -3,6 +3,7 @@ title: "boston era"
 publishedAt: 2024-05-13
 description: "it's my party and i'll post if i want to"
 slug: "boston-era"
+tags: ["blog"]
 isPublish: true
 ---
 
